@@ -48,7 +48,7 @@ I am going to build a SPA with two pages. The home page is where you can upload 
 
 Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches.
 
-![figma mockup](https://www.figma.com/file/51xxefRjaIPqvRC0eLtPg5/Untitled?type=design&node-id=0%3A1&mode=design&t=E5oeOvJK2Jks1XJZ-1)
+![figma mockup](assets/images/mockup.png)
 
 ### Data
 
