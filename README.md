@@ -48,9 +48,7 @@ I am going to build a SPA with three pages. The home page is where the recent up
 
 Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn sketches.
 
-![figma mockup](assets/images/mockup.png)
-![figma mockup](assets/images/mockup-login-register.png)
-![figma mockup](assets/images/mockup-profile.png)
+![figma mockup](assets/images/mockup-home.png)(assets/images/mockup-login-register.png)(assets/images/mockup-profile.png)
 
 ### Data
 
