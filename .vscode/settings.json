@@ -1,3 +1,4 @@
 {
-	"cSpell.words": ["thier"]
+    "prettier.configPath": ".prettierrc",
+    "prettier.ignorePath": ".prettierignore"
 }

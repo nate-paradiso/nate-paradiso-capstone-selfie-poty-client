@@ -61,9 +61,9 @@ My data will consist of users and images. I should have a 1 to many database str
 List endpoints that your server will implement, including HTTP methods, parameters, and example responses.
 
 "/" home will need a get request
-"/upload" this will be a post request
 "/login"
 "/login/userId"
+"/login/userId/upload"
 
 ### Auth
 
@@ -72,6 +72,8 @@ Does your project include any login or user profile functionality? If so, descri
 ## Roadmap
 
 Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation. Think about what you can reasonably complete before the due date. The more detail you provide, the easier it will be to build.
+
+Setup express --> MySql db --> build tables --> build endpoints
 
 ## Nice-to-haves
 
