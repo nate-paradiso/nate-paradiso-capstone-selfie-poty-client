@@ -47,13 +47,14 @@ host all the images.
 List technologies that will be used in your app, including any libraries to save time or provide
 more functionality. Be sure to research any potential limitations.
 
-I will use React, Express and MySql.
+I will use React, Express, cors, MySql, node.js, Sass, multer, path, axios, react-router-dom,
+FileUpload, Knex
 
 ### APIs
 
 List any external sources of data that will be used in your app.
 
-I would like to classify each images using this api. https://docs.imagga.com/?node#tags
+I will build my own api.
 
 ### Sitemap
 
@@ -64,33 +65,100 @@ displayed and the categories will be described. There will be login/register pag
 users to login or register.There will also be a profile page to show the user its photos in a
 gallery.
 
+Components 
+{
+    Header,
+    Footer,
+    Hero,
+    Gallery,
+    Categories,
+    Login,
+    Register,
+    Upload,
+}
+
 ### Mockups
 
 Provide visuals of your app's screens. You can use tools like Figma or pictures of hand-drawn
 sketches.
 
-![figma mockup](src/assets/images/mockup-home.png)![figma mockup](src/assets/images/mockup-login-register.png)![figma mockup](src/assets/images/mockup-profile.png)
+![figma mockup](src/assets/images/mockup-home.png)![figma mockup](src/assets/images/mockup-login-regi.png)![figma mockup](src/assets/images/mockup-profile.png)
 
 ### Data
 
 Describe your data and the relationships between them. You can show this visually using diagrams, or
 write it out.
 
-My data will consist of users and images. I should have a 1 to many database structure with users
-being the one and the images are many. Each user will have a username, password, email and Id. Each
-image will have an Id, username_Id, likes, category, and possibly meta data.
+My data will consist of a users table and images table. I should have a 1 to many database structure
+with users being the one and the images being many. Each user will have a first_name, last_name, password, email and id. 
+
+Each image will have an image_id, user_id, filename, and category.
 
 ### Endpoints
 
 List endpoints that your server will implement, including HTTP methods, parameters, and example
 responses.
 
-"/" home will need a get request "/login" "/login/userId" "/login/userId/upload"
+{ 
+    "/" homepage,  
+    GET all images from images table,
+        { 
+            "id": "1", 
+            "image": "filename", 
+            "categories": "underwater",
+            "timestamp": "date-submitted" 
+        },
+    Response returns 404 if the not images found,
+    Response returns 200 if successful  
+}
+{
+    "/login" login,
+    PUT a new user,
+        {
+            "user_id: "1",
+            "user_firstname": "Nate",
+            "user_lastname": "Paradiso",
+            "user_email": "nate@gmail.com",
+            "user_password": "123459"
+        }
+    Response returns 404 if user ID is not found,
+    Response returns 200 if successful with the JSON object that was created 
+}
+{
+    "/login/user:Id",
+    GET a user,
+        {
+            "id: "1",
+            "user_id": "1", 
+            "user_firstname": "Nate",
+            "image": "filename", 
+            "categories": "underwater",
+            "timestamp": "date-submitted" 
+        }
+    Response returns 404 if the Id is not found,
+    Response returns 200 if successful  
+}
+{
+    "/login/user:Id/upload",
+    PUT a image,
+        {
+            "id": "1", 
+            "user_id": "1", 
+            "categories": "underwater",
+            "title": "title of image"
+        }
+    Response returns 400 if unsuccessful because of missing properties in the request body,
+    Response returns 400 if the user_id value does not exist in the user table,
+    Response returns 200 if successful
+}
 
 ### Auth
 
 Does your project include any login or user profile functionality? If so, describe how
 authentication/authorization will be implemented.
+
+Not sure how to do this.
+
 
 ## Roadmap
 
@@ -98,10 +166,51 @@ Scope your project as a sprint. Break down the tasks that will need to be comple
 timeframes for implementation. Think about what you can reasonably complete before the due date. The
 more detail you provide, the easier it will be to build.
 
-Setup express --> MySql db --> build tables --> build endpoints
+Sprint 1
+<> 
+Create react app --> 
+Setup express app --> 
+Setup MySql db --> 
+Build tables and migration and seeds --> 
+Build endpoints in express --> 
+/>
+
+Sprint 2
+<>
+Build Header component -->
+Build Footer component -->
+Build Categories component -->
+Build Hero component -->
+Build Login component -->
+Build Register component -->
+Build UserUpload component -->
+Build UserGallery component -->
+/>
+
+Sprint 3
+<>
+Build react routes -->
+Test components -->
+/>
+
 
 ## Nice-to-haves
 
 Your project will be marked based on what you committed to in the above document. Under
 nice-to-haves, you can list any additional features you may complete if you have extra time, or
 after finishing.
+
+I would like to classify each images using this api. https://docs.imagga.com/?node#tags.
+
+A like button would be nice under each uploaded image. 
+
+I would like to have users and login using cookie parser.
+
+User authentication would be nice. 
+
+Limit uploads to 1 image per category.
+
+Delete an image. 
+
+Edit image metadata.
+
