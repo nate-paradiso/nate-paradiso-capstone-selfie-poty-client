@@ -33,3 +33,13 @@
   text-transform: uppercase;
   color: #141414;
 }
+@mixin h2-title {
+  display: flex;
+  font-size: 2.5rem;
+  font-weight: 200;
+  align-self: center;
+  border-bottom: solid 1px white;
+  padding-left: 7rem;
+  padding-right: 7rem;
+  margin-bottom: 2rem;
+}

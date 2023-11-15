@@ -1,0 +1,15 @@
+@use "../../styles/global" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.recent-gallery {
+  @include main;
+  font-family: oswald;
+  display: flex;
+  flex-direction: column;
+  border-bottom: solid 1px white;
+  &__title {
+    @include h2-title;
+    font-size: 1.5rem;
+  }
+}
