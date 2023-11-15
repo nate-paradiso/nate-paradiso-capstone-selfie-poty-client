@@ -1,0 +1,29 @@
+@use "../../styles/global" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: solid 1px white;
+  padding-top: 1rem;
+  @include desktop {
+  }
+  @include main;
+  &__logo {
+    &--image-selfie-logo {
+      height: 80px;
+    }
+    &--image {
+      height: 40px;
+    }
+  }
+  &__link {
+    padding-left: 1rem;
+  }
+  &__link-container {
+    display: flex;
+    flex-direction: row;
+  }
+}

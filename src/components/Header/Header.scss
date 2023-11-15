@@ -1,0 +1,24 @@
+@use "../../styles/global" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 1px white;
+
+  @include main;
+  &__logo {
+    &--image {
+      height: 80px;
+    }
+  }
+  &__link {
+    padding-left: 1rem;
+  }
+  &__link-container {
+    display: flex;
+    flex-direction: row;
+  }
+}

@@ -1,5 +1,32 @@
 import React from "react";
+import logo from "../../assets/images/logo.png";
+import instaLogo from "../../assets/images/insta.png";
+import facebookLogo from "../../assets/images/facebook.png";
+
+import { NavLink } from "react-router-dom";
+import "./Footer.scss";
 
 export const Footer = () => {
-  return <div>Footer</div>;
+  return (
+    <footer className="footer">
+      <div className="footer__logo">
+        <NavLink to="/">
+          <img className="footer__logo--image-selfie-logo" src={logo} alt="logo" />
+        </NavLink>
+      </div>
+      <div className="footer__link-container">
+        <div className="footer__link">
+          <NavLink to="https://www.instagram.com">
+            <img className="footer__logo--image" src={instaLogo} alt="instagram logo" />
+          </NavLink>
+        </div>
+        <div className="footer__link">
+          <NavLink to="https://www.facebook.com">
+            {" "}
+            <img className="footer__logo--image" src={facebookLogo} alt="facebook logo" />
+          </NavLink>
+        </div>
+      </div>
+    </footer>
+  );
 };
