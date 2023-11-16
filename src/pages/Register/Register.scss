@@ -1,0 +1,32 @@
+@use "../../styles/global" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.register {
+  @include main;
+  border-top: solid 1px white;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &__form {
+    width: 400px;
+  }
+  &__title {
+    @include h2-title;
+    font-size: 1.25rem;
+    border: none;
+  }
+  &__form-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  &__form-text {
+    color: $selfie-black;
+  }
+  &__error {
+    color: red;
+    text-align: center;
+  }
+}
