@@ -18,6 +18,9 @@ body {
   font-weight: 200;
   font-size: 1.25rem;
 }
+p {
+  letter-spacing: 0.05rem;
+}
 
 ol,
 ul,
@@ -25,6 +28,9 @@ menu {
   list-style: none;
 }
 
+a:hover {
+  color: rgb(216, 216, 216);
+}
 a {
   text-decoration: inherit;
   color: inherit;

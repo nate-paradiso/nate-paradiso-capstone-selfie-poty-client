@@ -4,6 +4,7 @@ import axios from "axios";
 import "./RecentGallery.scss";
 
 export const RecentGallery = () => {
+  const staticHost = "http://localhost:8080/images/";
   const [recentGallery, setRecentGallery] = useState([]);
 
   useEffect(() => {
@@ -24,6 +25,21 @@ export const RecentGallery = () => {
       {recentGallery ? (
         <section className="recent-gallery">
           <h2 className="recent-gallery__title">Recent Uploads</h2>
+          <div className="recent-gallery__image-gallery">
+            {recentGallery.map((image, index) => (
+              <div className="recent-gallery__image-container">
+                <img
+                  className="recent-gallery__image"
+                  key={index}
+                  src={`${staticHost}${image.image}`}
+                  alt={image.category}
+                />
+                <p className="recent-gallery__text">
+                  {image.category} -- {image.title}
+                </p>
+              </div>
+            ))}
+          </div>
         </section>
       ) : (
         <p>loading...</p>

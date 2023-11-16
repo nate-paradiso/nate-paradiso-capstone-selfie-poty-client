@@ -1,0 +1,23 @@
+@use "../../styles/global" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__register {
+    margin: 2rem;
+    border-radius: 4px;
+    border: none;
+    background-color: white;
+    color: $selfie-black;
+    text-transform: uppercase;
+    width: 130px;
+    height: 45px;
+    &:hover {
+      background-color: rgb(216, 216, 216);
+    }
+  }
+}

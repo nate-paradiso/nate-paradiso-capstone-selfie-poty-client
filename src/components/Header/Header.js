@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../../assets/images/logo.png";
 import { NavLink } from "react-router-dom";
 import "./Header.scss";
+import { HashLink as Link } from "react-router-hash-link";
 
 export const Header = () => {
   return (
@@ -13,10 +14,12 @@ export const Header = () => {
       </div>
       <div className="header__link-container">
         <div className="header__link">
-          <NavLink to="">Categories</NavLink>
+          <Link smooth to="/#section-two">
+            Categories
+          </Link>
         </div>
         <div className="header__link">
-          <NavLink to="">Login</NavLink>
+          <NavLink to="/login">Login</NavLink>
         </div>
       </div>
     </header>

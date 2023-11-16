@@ -14,7 +14,6 @@ export const Hero = () => {
             <p>A contest to celebrate you!</p>
           </div>
         </div>
-        <button className="button">Register now</button>
       </section>
     </>
   );

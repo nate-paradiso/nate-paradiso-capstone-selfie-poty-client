@@ -1,12 +1,15 @@
 import React from "react";
-import { Hero } from "../../components/Hero/Hero";
 import { Categories } from "../../components/Categories/Categories";
 import { RecentGallery } from "../../components/RecentGallery/RecentGallery";
+import { RegisterButton } from "../../components/RegisterButton/RegisterButton";
+import { NavLink } from "react-router-dom";
 
 export const HomePage = () => {
   return (
     <>
-      <Hero />
+      <NavLink to="/register">
+        <RegisterButton />
+      </NavLink>
       <RecentGallery />
       <Categories />
     </>
