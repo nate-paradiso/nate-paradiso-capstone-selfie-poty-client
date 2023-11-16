@@ -36,7 +36,7 @@ export const Register = () => {
         user_password: user_password,
       });
       setSuccess(true);
-      console.log("User registered successfully!");
+      setRegisterForm("");
     } catch (error) {
       console.log(error);
     }
@@ -58,7 +58,7 @@ export const Register = () => {
       !registerFormData.email ||
       !registerFormData.user_password
     ) {
-      setError("** Please fill in all the form fields **");
+      setError("** Please fill in each field **");
       return;
     }
 
@@ -122,7 +122,7 @@ export const Register = () => {
             </button>
           </div>
         </form>
-        {success && <p>User registered successfully!</p>}
+        {success && <p className="register__success">User registered successfully!</p>}
         {error && <p className="register__error">{error}</p>}
       </section>
     </>
