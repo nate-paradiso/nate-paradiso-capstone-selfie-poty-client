@@ -4,7 +4,9 @@ import { Hero } from "./components/Hero/Hero";
 import { Footer } from "./components/Footer/Footer";
 import { HomePage } from "./pages/HomePage/HomePage";
 import { Register } from "./pages/Register/Register";
+import { Login } from "./pages/Login/Login";
 import "./styles/_global.scss";
+import { Profile } from "./pages/Profile/Profile";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/current" element={<Profile />} />
         </Routes>
         <Footer />
       </div>

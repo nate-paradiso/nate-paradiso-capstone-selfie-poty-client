@@ -1,8 +1,16 @@
 @use "../../styles/global" as *;
 @use "../../styles/mixins" as *;
 @use "../../styles/variables" as *;
-
-.register {
+.login {
   @include main;
   @include form;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__login {
+    @include button;
+  }
 }

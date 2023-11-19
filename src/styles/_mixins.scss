@@ -43,3 +43,48 @@
   margin-right: 7rem;
   margin-bottom: 2rem;
 }
+@mixin form {
+  border-top: solid 1px white;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__form {
+    width: 400px;
+  }
+  &__title {
+    @include h2-title;
+    font-size: 1.25rem;
+    border: none;
+  }
+  &__form-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  &__form-text {
+    color: $selfie-black;
+  }
+  &__error {
+    color: red;
+    text-align: center;
+  }
+  &__success {
+    color: green;
+    text-align: center;
+  }
+}
+@mixin button {
+  margin: 2rem;
+  border-radius: 4px;
+  border: none;
+  background-color: white;
+  color: $selfie-black;
+  text-transform: uppercase;
+  width: 130px;
+  height: 45px;
+  &:hover {
+    background-color: rgb(216, 216, 216);
+  }
+}

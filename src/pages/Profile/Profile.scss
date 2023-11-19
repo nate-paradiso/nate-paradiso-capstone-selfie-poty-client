@@ -2,7 +2,11 @@
 @use "../../styles/mixins" as *;
 @use "../../styles/variables" as *;
 
-.register {
+.profile {
   @include main;
   @include form;
+
+  &__log-out {
+    @include button;
+  }
 }

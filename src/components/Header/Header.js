@@ -19,6 +19,9 @@ export const Header = () => {
           </Link>
         </div>
         <div className="header__link">
+          <NavLink to="/register">Register</NavLink>
+        </div>
+        <div className="header__link">
           <NavLink to="/login">Login</NavLink>
         </div>
       </div>

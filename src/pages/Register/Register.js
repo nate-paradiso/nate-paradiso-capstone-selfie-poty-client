@@ -2,6 +2,7 @@ import { useState } from "react";
 // import { useEffect } from "react";
 import "./Register.scss";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
 
 export const Register = () => {
   const [registerFormData, setRegisterForm] = useState({
@@ -29,18 +30,17 @@ export const Register = () => {
   const formSubmitHandler = async (e, first_name, last_name, email, user_password) => {
     e.preventDefault();
     try {
-      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/users`, {
+      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/users/register`, {
         first_name: first_name,
         last_name: last_name,
         email: email,
         user_password: user_password,
       });
       setSuccess(true);
-      setRegisterForm("");
+      setRegisterForm({ first_name: "", last_name: "", email: "", user_password: "" });
     } catch (error) {
       console.log(error);
     }
-    // getUsers();
   };
   const handleChange = e => {
     setRegisterForm({
@@ -122,6 +122,9 @@ export const Register = () => {
             </button>
           </div>
         </form>
+        <p>
+          Have an account? <NavLink to="/login">Login</NavLink>
+        </p>
         {success && <p className="register__success">User registered successfully!</p>}
         {error && <p className="register__error">{error}</p>}
       </section>
