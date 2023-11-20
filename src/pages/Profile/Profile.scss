@@ -5,8 +5,14 @@
 .profile {
   @include main;
   @include form;
-
-  &__log-out {
+  padding-top: 1rem;
+  &__email {
+    font-weight: 300;
+  }
+  &__button {
     @include button;
+  }
+  &__link:hover {
+    color: black;
   }
 }

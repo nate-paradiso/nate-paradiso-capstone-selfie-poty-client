@@ -16,7 +16,7 @@ export const Login = () => {
         user_password: event.target.user_password.value,
       });
       sessionStorage.setItem("token", response.data.token);
-      navigate("/current");
+      navigate("/profile");
     } catch (error) {
       setError(error.response.data);
     }
@@ -60,52 +60,3 @@ export const Login = () => {
     </div>
   );
 };
-// export const Login = () => {
-//   const [loginFormData, setLoginForm] = useState({
-//     email: "",
-//     user_password: "",
-//   });
-//   const [error, setError] = useState("");
-//     const [success, setSuccess] = useState(false);
-//   const navigate = useNavigate();
-
-//   const formSubmitHandler = async event => {
-//     event.preventDefault();
-
-//     if (!loginFormData.email || !loginFormData.user_password) {
-//       setError("** Please fill in each field **");
-//       return;
-//     }
-//     try {
-//       const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/users/login`, {
-//         email: event.target.email.value,
-//         password: event.target.user_password.value,
-//       });
-//       sessionStorage.setItem("token", response.data.token);
-//         setSuccess(true);
-//       setError("");
-//       setLoginForm({ email: "", user_password: "" });
-//       navigate("/");
-//     } catch (error) {
-//       setError(error.response.data);
-//     }
-//   };
-//     const handleChange = e => {
-//       setLoginForm({
-//         ...loginFormData,
-//         [e.target.name]: e.target.value,
-//       });
-//     };
-
-//   const handleSubmit = event => {
-//     event.preventDefault();
-
-//     if (!loginFormData.email || !loginFormData.user_password) {
-//       setError("** Please fill in each field **");
-//       return;
-//     }
-
-//     setError(false);
-
-//     formSubmitHandler(event, loginFormData.email, loginFormData.user_password);
-//   };

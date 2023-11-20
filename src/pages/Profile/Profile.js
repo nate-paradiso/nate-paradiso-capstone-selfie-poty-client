@@ -2,6 +2,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Profile.scss";
+import { UserGallery } from "../../components/UserGallery/UserGallery";
+import { Upload } from "../../components/Upload/Upload";
 
 export const Profile = () => {
   const [user, setUser] = useState(null);
@@ -20,7 +22,7 @@ export const Profile = () => {
             Authorization: `Bearer ${token}`,
           },
         });
-
+        console.log(response.data);
         setUser(response.data);
       } catch (error) {
         console.log(error);
@@ -39,9 +41,11 @@ export const Profile = () => {
   if (failedAuth) {
     return (
       <main className="profile">
-        <p>You must be logged in to see this page.</p>
+        <p>Please Login</p>
         <p>
-          <Link to="/login">Log in</Link>
+          <Link className="profile__link" to="/login">
+            <button className="profile__button">Login</button>
+          </Link>
         </p>
       </main>
     );
@@ -58,21 +62,18 @@ export const Profile = () => {
   return (
     <>
       <main className="profile">
-        <h1 className="profile">Dashboard</h1>
-
+        <h2>{user.first_name}s Profile</h2>
         <p>
-          Welcome back, {user.first_name} {user.last_name}
+          Welcome! {user.first_name} {user.last_name}
         </p>
 
-        <h2>My Profile</h2>
-        <p>Email: {user.email}</p>
-        <p>
-          Name: {user.first_name} {user.last_name}
-        </p>
+        <p className="profile__email">Email/Username: {user.email}</p>
 
-        <button className="profile__log-out" onClick={handleLogout}>
+        <button className="profile__button" onClick={handleLogout}>
           Log out
         </button>
+        <Upload user={user} />
+        <UserGallery user={user} />
       </main>
     </>
   );

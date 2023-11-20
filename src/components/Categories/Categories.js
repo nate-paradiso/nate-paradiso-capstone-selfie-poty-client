@@ -4,7 +4,7 @@ import "./Categories.scss";
 export const Categories = () => {
   return (
     <>
-      <section id="section-two" className="categories">
+      <section id="categories" className="categories">
         <h2 className="categories__title">Categories</h2>
         <div className="categories__text-container">
           <div className="categories__text-container-top">

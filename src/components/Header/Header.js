@@ -14,7 +14,7 @@ export const Header = () => {
       </div>
       <div className="header__link-container">
         <div className="header__link">
-          <Link smooth to="/#section-two">
+          <Link smooth to="/#categories">
             Categories
           </Link>
         </div>
