@@ -10,4 +10,7 @@
   &__register {
     @include button;
   }
+  &__link:hover {
+    font-size: inherit;
+  }
 }

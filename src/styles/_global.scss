@@ -28,12 +28,13 @@ menu {
   list-style: none;
 }
 
-a:hover {
-  color: rgb(216, 216, 216);
-}
 a {
   text-decoration: inherit;
   color: inherit;
+}
+a:hover {
+  color: rgb(216, 216, 216);
+  font-size: 1.5rem;
 }
 
 fieldset,

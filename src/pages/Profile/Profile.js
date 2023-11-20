@@ -22,7 +22,6 @@ export const Profile = () => {
             Authorization: `Bearer ${token}`,
           },
         });
-        console.log(response.data);
         setUser(response.data);
       } catch (error) {
         console.log(error);

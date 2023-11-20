@@ -16,11 +16,11 @@ export const Upload = ({ user }) => {
       const formData = new FormData();
       formData.append("title", title);
       formData.append("category", category);
-      formData.append("image", e.target[2].files[0]);
+      formData.append("image", document.getElementById("upload").files[0]);
       try {
         const token = sessionStorage.getItem("token");
         await axios.post(
-          `${process.env.REACT_APP_BACKEND_URL}/users/current/${user.id}/images/upload`,
+          `${process.env.REACT_APP_BACKEND_URL}/users/current/${user.id}/upload`,
           formData,
           {
             headers: {
@@ -63,9 +63,7 @@ export const Upload = ({ user }) => {
     const file = e.target.files[0];
     const reader = new FileReader();
 
-    reader.onloadend = () => {
-      const fileContent = reader.result;
-    };
+    reader.onloadend = () => {};
 
     reader.readAsDataURL(file);
   };
@@ -89,21 +87,15 @@ export const Upload = ({ user }) => {
             id="category"
             value={uploadForm.category}
             onChange={handleChange}
-            placeholder="category"
           >
             <option value="">Select Category</option>
             <option value="AI Selfie">AI Selfie</option>
             <option value="Phone Selfie">Phone Selfie</option>
             <option value="Underwater">Underwater</option>
             <option value="Self Portrait">Self Portrait</option>
-          </select>
-        </div>
-        <div className="button-container">
-          {" "}
-          <button className="button-container__upload">
-            <input id="upload" accept="image/*" type="file" onChange={e => handleFileChange(e)} />
-            Upload
-          </button>
+          </select>{" "}
+          <input id="upload" accept="image/*" type="file" onChange={e => handleFileChange(e)} />
+          <button className="button-container__upload">Upload</button>
         </div>
       </form>
       {success && <p className="upload__success">Upload successful!</p>}
