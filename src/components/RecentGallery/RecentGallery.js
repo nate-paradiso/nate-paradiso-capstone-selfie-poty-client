@@ -11,7 +11,7 @@ export const RecentGallery = () => {
     const getAllImages = async () => {
       try {
         const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/`);
-        console.log(data);
+
         setRecentGallery(data);
       } catch (error) {
         console.error("Error fetching recent images:", error.message);

@@ -13,19 +13,6 @@ export const Register = () => {
   });
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
-  //   const [users, setUsers] = useState(null);
-
-  //   const getUsers = async () => {
-  //     try {
-  //       const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/users`);
-  //       //   setUsers(response.data);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-  //   useEffect(() => {
-  //     getUsers();
-  //   }, []);
 
   const formSubmitHandler = async (e, first_name, last_name, email, user_password) => {
     e.preventDefault();

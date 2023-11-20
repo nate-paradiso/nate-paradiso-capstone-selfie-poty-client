@@ -3,6 +3,11 @@
 @use "../../styles/variables" as *;
 
 .footer {
+  // position: fixed;
+  // left: 0;
+  // bottom: 0;
+  // width: 100%;
+  // background-color: $selfie-black;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,8 +20,8 @@
     &--image-selfie-logo {
       height: 80px;
     }
-    &--image {
-      height: 40px;
+    &--image-selfie-logo:active {
+      height: 70px;
     }
   }
   &__link {

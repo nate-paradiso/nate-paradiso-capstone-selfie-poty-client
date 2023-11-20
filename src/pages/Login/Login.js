@@ -2,11 +2,13 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../App";
 import "./Login.scss";
 
 export const Login = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleSubmit = async event => {
     event.preventDefault();
@@ -16,6 +18,7 @@ export const Login = () => {
         user_password: event.target.user_password.value,
       });
       sessionStorage.setItem("token", response.data.token);
+      login();
       navigate("/profile");
     } catch (error) {
       setError(error.response.data);

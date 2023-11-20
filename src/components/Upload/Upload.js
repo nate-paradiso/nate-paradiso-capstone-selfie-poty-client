@@ -59,19 +59,11 @@ export const Upload = ({ user }) => {
     formSubmitHandler(event, uploadForm.title, uploadForm.category);
   };
 
-  const handleFileChange = e => {
-    const file = e.target.files[0];
-    const reader = new FileReader();
-
-    reader.onloadend = () => {};
-
-    reader.readAsDataURL(file);
-  };
-
   return (
     <section>
       <form className="upload__form" encType="multipart/form-data" onSubmit={handleSubmit}>
         <div className="upload__form-container">
+          <p className="upload__title">upload here</p>
           <input
             className="upload__form-text"
             type="text"
@@ -88,13 +80,28 @@ export const Upload = ({ user }) => {
             value={uploadForm.category}
             onChange={handleChange}
           >
-            <option value="">Select Category</option>
-            <option value="AI Selfie">AI Selfie</option>
-            <option value="Phone Selfie">Phone Selfie</option>
-            <option value="Underwater">Underwater</option>
-            <option value="Self Portrait">Self Portrait</option>
+            <option selected> select category </option>
+            <option className="upload__form-dropdown--options" value="AI Selfie">
+              AI Selfie
+            </option>
+            <option className="upload__form-dropdown--options" value="Phone Selfie">
+              Phone Selfie
+            </option>
+            <option className="upload__form-dropdown--options" value="Underwater">
+              Underwater
+            </option>
+            <option className="upload__form-dropdown--options" value="Self Portrait">
+              Self Portrait
+            </option>
           </select>{" "}
-          <input id="upload" accept="image/*" type="file" onChange={e => handleFileChange(e)} />
+          <label className="upload__label">
+            <input
+              className="upload__input"
+              id="upload"
+              accept="image/jpg, image/jpeg, image/png"
+              type="file"
+            />
+          </label>
           <button className="button-container__upload">Upload</button>
         </div>
       </form>

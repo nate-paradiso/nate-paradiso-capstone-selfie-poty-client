@@ -5,7 +5,19 @@
   @include main;
   @include form;
   &__form-dropdown {
-    color: black;
+    color: grey;
+    &--options {
+      color: black;
+    }
+  }
+  &__title {
+    margin: 0rem;
+    padding-bottom: 0.5rem;
+  }
+  &__input {
+    width: 100%;
+    color: gray;
+    background-color: white;
   }
 }
 .button-container {
@@ -15,5 +27,6 @@
   width: 100%;
   &__upload {
     @include button;
+    align-self: center;
   }
 }

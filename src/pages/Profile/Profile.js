@@ -1,3 +1,4 @@
+import { useAuth } from "../../App.js";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -6,6 +7,7 @@ import { UserGallery } from "../../components/UserGallery/UserGallery";
 import { Upload } from "../../components/Upload/Upload";
 
 export const Profile = () => {
+  const { isLoggedIn } = useAuth();
   const [user, setUser] = useState(null);
   const [failedAuth, setFailedAuth] = useState(false);
 
@@ -26,16 +28,18 @@ export const Profile = () => {
       } catch (error) {
         console.log(error);
         setFailedAuth(true);
+        isLoggedIn();
       }
     };
     getCurrent();
-  }, []);
+  }, [isLoggedIn]);
 
-  const handleLogout = () => {
-    sessionStorage.removeItem("token");
-    setUser(null);
-    setFailedAuth(true);
-  };
+  // const handleLogout = () => {
+  //   sessionStorage.removeItem("token");
+  //   setUser(null);
+  //   setFailedAuth(true);
+  //   logout();
+  // };
 
   if (failedAuth) {
     return (
@@ -61,16 +65,12 @@ export const Profile = () => {
   return (
     <>
       <main className="profile">
-        <h2>{user.first_name}s Profile</h2>
-        <p>
+        <h3 className="profile__name">
           Welcome! {user.first_name} {user.last_name}
-        </p>
+        </h3>
 
         <p className="profile__email">Email/Username: {user.email}</p>
 
-        <button className="profile__button" onClick={handleLogout}>
-          Log out
-        </button>
         <Upload user={user} />
         <UserGallery user={user} />
       </main>

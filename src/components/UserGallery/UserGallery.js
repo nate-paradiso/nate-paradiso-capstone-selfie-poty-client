@@ -30,7 +30,7 @@ export const UserGallery = ({ user }) => {
   }, [user]);
 
   return (
-    <div>
+    <section>
       <div className="recent-gallery__image-gallery">
         {userGallery.map((image, index) => (
           <div className="recent-gallery__image-container">
@@ -46,6 +46,6 @@ export const UserGallery = ({ user }) => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };

@@ -3,6 +3,11 @@
 @use "../../styles/variables" as *;
 
 .header {
+  // position: fixed;
+  // left: 0;
+  // top: 0;
+  // width: 100%;
+  background-color: $selfie-black;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,12 +18,28 @@
     &--image {
       height: 80px;
     }
+    &--image:active {
+      height: 70px;
+    }
   }
+
   &__link {
     padding-left: 1rem;
   }
   &__link-container {
     display: flex;
     flex-direction: row;
+  }
+  &__logout {
+    padding-left: 1rem;
+  }
+  &__logout:hover {
+    color: rgb(216, 216, 216);
+  }
+  &__login {
+    padding-left: 1rem;
+  }
+  &__dashboard {
+    font-weight: 400;
   }
 }

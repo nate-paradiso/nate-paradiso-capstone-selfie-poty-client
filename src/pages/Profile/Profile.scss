@@ -6,8 +6,13 @@
   @include main;
   @include form;
   padding-top: 1rem;
+  &__name {
+    font-weight: 300;
+  }
   &__email {
     font-weight: 300;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
   }
   &__button {
     @include button;

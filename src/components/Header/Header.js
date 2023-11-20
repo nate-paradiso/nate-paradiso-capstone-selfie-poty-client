@@ -3,8 +3,11 @@ import logo from "../../assets/images/logo.png";
 import { NavLink } from "react-router-dom";
 import "./Header.scss";
 import { HashLink as Link } from "react-router-hash-link";
+import { useAuth } from "../../App";
 
 export const Header = () => {
+  console.log("Header component rendered");
+  const { isLoggedIn, logout } = useAuth();
   return (
     <header className="header">
       <div className="header__logo">
@@ -24,10 +27,24 @@ export const Header = () => {
           </Link>
         </div>
         <div className="header__link">
-          <NavLink to="/register">Register</NavLink>
+          {isLoggedIn ? (
+            <NavLink className="header__dashboard" to="/profile">
+              Dashboard
+            </NavLink>
+          ) : (
+            <NavLink to="/register">Register</NavLink>
+          )}
         </div>
-        <div className="header__link">
-          <NavLink to="/login">Login</NavLink>
+        <div>
+          {isLoggedIn ? (
+            <button className="header__logout" onClick={logout}>
+              Logout
+            </button>
+          ) : (
+            <NavLink className="header__login" to="/login">
+              Login
+            </NavLink>
+          )}
         </div>
       </div>
     </header>

@@ -15,7 +15,7 @@
 @mixin main {
   padding-left: 1rem;
   padding-right: 1rem;
-  margin-top: 1rem;
+  padding-top: 1rem;
 
   @include tablet {
     padding-left: 2rem;
