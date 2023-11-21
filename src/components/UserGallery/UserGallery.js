@@ -1,38 +1,16 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
+import "./UserGallery.scss";
 
-export const UserGallery = ({ user }) => {
+export const UserGallery = ({ userGallery }) => {
   const staticHost = "http://localhost:8080/images/";
-  const [userGallery, setUserGallery] = useState([]);
 
-  useEffect(() => {
-    if (user) {
-      const getUserImages = async () => {
-        try {
-          const token = sessionStorage.getItem("token");
-          const { data } = await axios.get(
-            `${process.env.REACT_APP_BACKEND_URL}/users/current/${user.id}/images`,
-            {
-              headers: {
-                Authorization: `Bearer ${token}`,
-              },
-            },
-          );
-
-          setUserGallery(data);
-        } catch (error) {
-          console.error("Error fetching user images:", error.message);
-        }
-      };
-
-      getUserImages();
-    }
-  }, [user]);
+  const numberOfRecentImagesToShow = 20;
+  const mostRecentImages = userGallery.slice(-numberOfRecentImagesToShow).reverse();
 
   return (
-    <section>
+    <section className="user-gallery">
+      <h2 className="user-gallery__title">Your images</h2>
       <div className="recent-gallery__image-gallery">
-        {userGallery.map(image => (
+        {mostRecentImages.map(image => (
           <div className="recent-gallery__image-container">
             <img
               className="recent-gallery__image"

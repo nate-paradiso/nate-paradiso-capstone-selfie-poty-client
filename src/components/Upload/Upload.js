@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import "./Upload.scss";
 
-export const Upload = ({ user }) => {
+export const Upload = ({ user, getUserImages }) => {
   const [uploadForm, setUploadForm] = useState({
     title: "",
     category: "",
@@ -33,6 +33,8 @@ export const Upload = ({ user }) => {
         );
         setSuccess(true);
         setUploadForm({ title: "", category: "" });
+
+        getUserImages();
       } catch (error) {
         console.error("Error posting image:", error.message);
       }
@@ -60,7 +62,7 @@ export const Upload = ({ user }) => {
   };
 
   return (
-    <section>
+    <section className="upload">
       <form className="upload__form" encType="multipart/form-data" onSubmit={handleSubmit}>
         <div className="upload__form-container">
           <p className="upload__title">upload here</p>
@@ -80,7 +82,10 @@ export const Upload = ({ user }) => {
             value={uploadForm.category}
             onChange={handleChange}
           >
-            <option value=""> select category </option>
+            <option value="" className="upload__form-dropdown--options">
+              {" "}
+              select a category{" "}
+            </option>
             <option className="upload__form-dropdown--options" value="AI Selfie">
               AI Selfie
             </option>
@@ -94,10 +99,17 @@ export const Upload = ({ user }) => {
               Self Portrait
             </option>
           </select>{" "}
-          <label class="upload__form--input-label" for="upload">
-            Drop or choose images here
-            <input id="upload" accept="image/jpg, image/jpeg, image/png" type="file" />
-          </label>
+          <div class="upload__input-container">
+            <label for="upload" class="button-container__choose">
+              Choose a File
+            </label>
+            <input
+              id="upload"
+              accept="image/jpg, image/jpeg, image/png"
+              type="file"
+              class="visually-hidden"
+            />
+          </div>
           <button className="button-container__upload">Upload</button>
         </div>
       </form>

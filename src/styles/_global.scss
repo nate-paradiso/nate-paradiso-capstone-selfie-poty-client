@@ -53,6 +53,11 @@ button,
 input[type="button"] {
   border: none;
 }
+input::placeholder,
+select {
+  font-weight: 200;
+  // text-transform: lowercase;
+}
 
 input,
 textarea,
@@ -80,4 +85,13 @@ select {
   border-radius: 20px;
   border: none;
   margin-bottom: 1rem;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  // outline: none;
+  outline: 5px solid #0e86b5;
+}
+select {
+  outline: none;
 }

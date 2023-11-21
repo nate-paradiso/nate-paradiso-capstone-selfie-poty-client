@@ -1,0 +1,12 @@
+@use "../../styles/global" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.user-gallery {
+  &__title {
+    font-weight: 200;
+    text-align: center;
+    padding: 1rem;
+    text-decoration: underline;
+  }
+}

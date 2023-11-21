@@ -9,6 +9,7 @@
 
   &__register {
     @include button;
+    text-transform: uppercase;
   }
   &__link:hover {
     font-size: inherit;

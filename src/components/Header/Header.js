@@ -37,9 +37,9 @@ export const Header = () => {
         </div>
         <div>
           {isLoggedIn ? (
-            <button className="header__logout" onClick={logout}>
+            <NavLink className="header__logout" onClick={logout}>
               Logout
-            </button>
+            </NavLink>
           ) : (
             <NavLink className="header__login" to="/login">
               Login

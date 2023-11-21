@@ -2,29 +2,10 @@
 @use "../../styles/mixins" as *;
 @use "../../styles/variables" as *;
 .upload {
+  border-bottom: solid 1px white;
   @include main;
   @include form;
-  &__form {
-    &--input-label {
-      background-color: #ffffff;
-      border-radius: 4px;
-
-      color: black;
-      font-family: oswald;
-      font-weight: 300;
-      height: 150px;
-      border: none;
-      padding-top: 2rem;
-      text-align: center;
-      border-radius: 20px;
-      cursor: pointer;
-      z-index: 1;
-      &:hover {
-        background-color: rgb(216, 216, 216);
-        transition: 0.3s ease-in-out, 0.3s ease-in-out;
-      }
-    }
-  }
+  padding-left: 2rem;
   &__form-container {
     display: flex;
   }
@@ -38,6 +19,13 @@
     margin: 0rem;
     padding-bottom: 0.5rem;
   }
+  &__input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0rem;
+    margin-bottom: 0rem;
+  }
 }
 .button-container {
   display: flex;
@@ -48,15 +36,35 @@
     @include button;
     align-self: center;
   }
-}
+  &__choose {
+    @include button;
+    font-weight: 200;
+    margin-bottom: 0rem;
+    text-transform: lowercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    height: 30pxpx;
+    margin-top: 0rem;
+    color: grey;
 
-input[type="file"]::file-selector-button {
-  margin-left: 3rem;
-  margin-top: 2rem;
-  align-items: center;
-  cursor: pointer;
-  background-color: #ffffff;
-  border-radius: 20px;
-  position: relative;
-  // display: none;
+    font-family: oswald;
+    align-self: center;
+    border-radius: 30px;
+    cursor: pointer;
+    &:hover {
+      color: $selfie-black;
+    }
+  }
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }

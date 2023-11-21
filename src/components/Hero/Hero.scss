@@ -22,11 +22,21 @@
   &__link {
     padding-left: 1rem;
   }
+  &__text-title {
+    font-weight: 200;
+  }
   &__text-container {
     display: flex;
     flex-direction: column;
     @include tablet {
-      flex-direction: row;
+      flex-direction: column;
+    }
+  }
+  &__text-paragraphs {
+    padding-left: 2rem;
+    &--tagline {
+      padding-top: 1rem;
+      font-weight: 100;
     }
   }
 }

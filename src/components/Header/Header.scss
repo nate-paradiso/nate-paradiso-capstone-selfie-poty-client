@@ -32,12 +32,16 @@
   }
   &__logout {
     padding-left: 1rem;
+    font-weight: 400;
   }
   &__logout:hover {
     color: rgb(216, 216, 216);
   }
   &__login {
     padding-left: 1rem;
+  }
+  &__login:hover {
+    color: rgb(216, 216, 216);
   }
   &__dashboard {
     font-weight: 400;

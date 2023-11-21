@@ -1,6 +1,6 @@
 import { useAuth } from "../../App.js";
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useCallback, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Profile.scss";
 import { UserGallery } from "../../components/UserGallery/UserGallery";
@@ -10,6 +10,7 @@ export const Profile = () => {
   const { isLoggedIn } = useAuth();
   const [user, setUser] = useState(null);
   const [failedAuth, setFailedAuth] = useState(false);
+  const [userGallery, setUserGallery] = useState([]);
 
   useEffect(() => {
     const token = sessionStorage.getItem("token");
@@ -34,12 +35,29 @@ export const Profile = () => {
     getCurrent();
   }, [isLoggedIn]);
 
-  // const handleLogout = () => {
-  //   sessionStorage.removeItem("token");
-  //   setUser(null);
-  //   setFailedAuth(true);
-  //   logout();
-  // };
+  const getUserImages = useCallback(async () => {
+    try {
+      const token = sessionStorage.getItem("token");
+      const { data } = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/users/current/${user.id}/images`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      );
+
+      setUserGallery(data);
+    } catch (error) {
+      console.error("Error fetching user images:", error.message);
+    }
+  }, [user]);
+
+  useEffect(() => {
+    if (user) {
+      getUserImages();
+    }
+  }, [user, getUserImages]);
 
   if (failedAuth) {
     return (
@@ -69,8 +87,8 @@ export const Profile = () => {
 
         <p className="profile__email">Email/Username: {user.email}</p>
 
-        <Upload user={user} />
-        <UserGallery user={user} />
+        <Upload user={user} getUserImages={getUserImages} />
+        <UserGallery userGallery={userGallery} />
       </main>
     </>
   );

@@ -20,13 +20,15 @@ export const RecentGallery = () => {
     getAllImages();
   }, []);
 
+  const numberOfRecentImagesToShow = 20;
+  const mostRecentImages = recentGallery.slice(-numberOfRecentImagesToShow).reverse();
   return (
     <>
       {recentGallery ? (
         <section className="recent-gallery">
           <h2 className="recent-gallery__title">Recent Uploads</h2>
           <div className="recent-gallery__image-gallery">
-            {recentGallery.map(image => (
+            {mostRecentImages.map(image => (
               <div key={image.id} className="recent-gallery__image-container">
                 <img
                   className="recent-gallery__image"
