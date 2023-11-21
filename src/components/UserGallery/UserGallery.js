@@ -32,11 +32,11 @@ export const UserGallery = ({ user }) => {
   return (
     <section>
       <div className="recent-gallery__image-gallery">
-        {userGallery.map((image, index) => (
+        {userGallery.map(image => (
           <div className="recent-gallery__image-container">
             <img
               className="recent-gallery__image"
-              key={index}
+              key={image.id}
               src={`${staticHost}${image.image}`}
               alt={image.category}
             />

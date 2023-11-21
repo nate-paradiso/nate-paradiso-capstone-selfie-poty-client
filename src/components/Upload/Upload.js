@@ -80,7 +80,7 @@ export const Upload = ({ user }) => {
             value={uploadForm.category}
             onChange={handleChange}
           >
-            <option selected> select category </option>
+            <option value=""> select category </option>
             <option className="upload__form-dropdown--options" value="AI Selfie">
               AI Selfie
             </option>
@@ -94,13 +94,9 @@ export const Upload = ({ user }) => {
               Self Portrait
             </option>
           </select>{" "}
-          <label className="upload__label">
-            <input
-              className="upload__input"
-              id="upload"
-              accept="image/jpg, image/jpeg, image/png"
-              type="file"
-            />
+          <label class="upload__form--input-label" for="upload">
+            Drop or choose images here
+            <input id="upload" accept="image/jpg, image/jpeg, image/png" type="file" />
           </label>
           <button className="button-container__upload">Upload</button>
         </div>

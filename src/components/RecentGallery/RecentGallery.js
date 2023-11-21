@@ -26,11 +26,11 @@ export const RecentGallery = () => {
         <section className="recent-gallery">
           <h2 className="recent-gallery__title">Recent Uploads</h2>
           <div className="recent-gallery__image-gallery">
-            {recentGallery.map((image, index) => (
-              <div className="recent-gallery__image-container">
+            {recentGallery.map(image => (
+              <div key={image.id} className="recent-gallery__image-container">
                 <img
                   className="recent-gallery__image"
-                  key={index}
+                  key={image.id}
                   src={`${staticHost}${image.image}`}
                   alt={image.category}
                 />

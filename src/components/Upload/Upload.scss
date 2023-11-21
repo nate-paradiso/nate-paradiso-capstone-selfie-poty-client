@@ -4,6 +4,30 @@
 .upload {
   @include main;
   @include form;
+  &__form {
+    &--input-label {
+      background-color: #ffffff;
+      border-radius: 4px;
+
+      color: black;
+      font-family: oswald;
+      font-weight: 300;
+      height: 150px;
+      border: none;
+      padding-top: 2rem;
+      text-align: center;
+      border-radius: 20px;
+      cursor: pointer;
+      z-index: 1;
+      &:hover {
+        background-color: rgb(216, 216, 216);
+        transition: 0.3s ease-in-out, 0.3s ease-in-out;
+      }
+    }
+  }
+  &__form-container {
+    display: flex;
+  }
   &__form-dropdown {
     color: grey;
     &--options {
@@ -13,11 +37,6 @@
   &__title {
     margin: 0rem;
     padding-bottom: 0.5rem;
-  }
-  &__input {
-    width: 100%;
-    color: gray;
-    background-color: white;
   }
 }
 .button-container {
@@ -29,4 +48,15 @@
     @include button;
     align-self: center;
   }
+}
+
+input[type="file"]::file-selector-button {
+  margin-left: 3rem;
+  margin-top: 2rem;
+  align-items: center;
+  cursor: pointer;
+  background-color: #ffffff;
+  border-radius: 20px;
+  position: relative;
+  // display: none;
 }

@@ -3,11 +3,6 @@
 @use "../../styles/variables" as *;
 
 .footer {
-  // position: fixed;
-  // left: 0;
-  // bottom: 0;
-  // width: 100%;
-  // background-color: $selfie-black;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,6 +17,11 @@
     }
     &--image-selfie-logo:active {
       height: 70px;
+    }
+    &--image-git {
+      padding-top: 9px;
+      height: 62px;
+      padding-right: 1rem;
     }
   }
   &__link {

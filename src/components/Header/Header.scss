@@ -3,10 +3,10 @@
 @use "../../styles/variables" as *;
 
 .header {
-  // position: fixed;
-  // left: 0;
-  // top: 0;
-  // width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
   background-color: $selfie-black;
   display: flex;
   justify-content: space-between;

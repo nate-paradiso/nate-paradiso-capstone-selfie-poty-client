@@ -65,9 +65,7 @@ export const Profile = () => {
   return (
     <>
       <main className="profile">
-        <h3 className="profile__name">
-          Welcome! {user.first_name} {user.last_name}
-        </h3>
+        <h3 className="profile__name">Welcome {user.first_name}!</h3>
 
         <p className="profile__email">Email/Username: {user.email}</p>
 

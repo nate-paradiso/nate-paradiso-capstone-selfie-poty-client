@@ -23,7 +23,7 @@ export const Categories = () => {
             </p>
           </div>
           <div className="categories__text-container-bottom">
-            <h className="categories__sub-title">Artificial Selfie “AI”</h>
+            <h3 className="categories__sub-title">Artificial Selfie “AI”</h3>
             <p className="categories__text">
               The "AI Selfies" category showcases the fascinating world of artificial intelligence
               and machine-generated self-portraits, where creators leverage AI technologies to craft
