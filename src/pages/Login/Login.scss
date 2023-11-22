@@ -3,6 +3,7 @@
 @use "../../styles/variables" as *;
 
 .login {
+  margin-bottom: 10rem;
   @include main;
   @include form;
 }

@@ -6,7 +6,6 @@ import { HashLink as Link } from "react-router-hash-link";
 import { useAuth } from "../../App";
 
 export const Header = () => {
-  console.log("Header component rendered");
   const { isLoggedIn, logout } = useAuth();
   return (
     <header className="header">

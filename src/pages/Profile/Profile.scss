@@ -3,6 +3,7 @@
 @use "../../styles/variables" as *;
 
 .profile {
+  margin-bottom: 5.5rem;
   @include main;
   @include form;
   padding-top: 1rem;

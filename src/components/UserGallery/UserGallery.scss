@@ -27,6 +27,7 @@
     @include tablet {
       height: 300px;
       width: 300px;
+      overflow: hidden;
     }
     @include desktop {
       height: 400px;
@@ -34,8 +35,9 @@
     }
   }
   &__image {
-    height: 100%;
+    height: auto;
     width: 100%;
+    display: block;
     object-fit: cover;
     border-radius: 9px;
     position: relative;

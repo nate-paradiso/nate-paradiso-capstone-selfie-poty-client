@@ -3,7 +3,7 @@
 @use "../../styles/variables" as *;
 
 .register {
-  padding-bottom: 1rem;
+  margin-bottom: 10rem;
   @include main;
   @include form;
 }

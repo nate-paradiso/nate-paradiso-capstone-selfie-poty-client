@@ -33,8 +33,8 @@ export const RecentGallery = () => {
         <section className="recent-gallery">
           <h2 className="recent-gallery__title">Recent Uploads</h2>
           <div className="recent-gallery__image-gallery">
-            {mostRecentImages.map(image => (
-              <div key={image.id} className="recent-gallery__image-container">
+            {mostRecentImages.map((image, index) => (
+              <div key={index} className="recent-gallery__image-container">
                 <button className="recent-gallery__image--button">
                   <img
                     className={`recent-gallery__image ${
