@@ -36,8 +36,6 @@ export const Login = () => {
               type="email"
               name="email"
               id="email"
-              //   value={loginFormData.email}
-              //   onChange={handleChange}
               placeholder="email"
             />
             <input
@@ -45,8 +43,6 @@ export const Login = () => {
               type="password"
               name="user_password"
               id="password"
-              //   value={loginFormData.user_password}
-              //   onChange={handleChange}
               placeholder="password"
             />
           </div>
@@ -57,7 +53,6 @@ export const Login = () => {
             </button>
           </div>
         </form>
-        {/* {success && <p className="login__success">Login successful!</p>} */}
         {error && <p className="login__error">{error}</p>}
       </section>
     </div>

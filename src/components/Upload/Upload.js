@@ -100,14 +100,14 @@ export const Upload = ({ user, getUserImages }) => {
             </option>
           </select>{" "}
           <div className="upload__input-container">
-            <label htmlFor="upload" class="button-container__choose">
+            <label htmlFor="upload" className="button-container__choose">
               Choose a File
             </label>
             <input
               id="upload"
               accept="image/jpg, image/jpeg, image/png"
               type="file"
-              class="visually-hidden"
+              className="visually-hidden"
             />
           </div>
           <button className="button-container__upload">Upload</button>

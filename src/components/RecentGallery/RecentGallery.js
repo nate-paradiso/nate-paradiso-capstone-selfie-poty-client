@@ -1,11 +1,12 @@
-import React from "react";
+// import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./RecentGallery.scss";
 
 export const RecentGallery = () => {
-  const staticHost = "http://localhost:8080/images/";
+  // const staticHost = "http://localhost:8080/images/";
   const [recentGallery, setRecentGallery] = useState([]);
+  const [enlarged, setEnlarged] = useState(false);
 
   useEffect(() => {
     const getAllImages = async () => {
@@ -22,6 +23,10 @@ export const RecentGallery = () => {
 
   const numberOfRecentImagesToShow = 20;
   const mostRecentImages = recentGallery.slice(-numberOfRecentImagesToShow).reverse();
+
+  const handleClick = () => {
+    setEnlarged(!enlarged);
+  };
   return (
     <>
       {recentGallery ? (
@@ -30,12 +35,15 @@ export const RecentGallery = () => {
           <div className="recent-gallery__image-gallery">
             {mostRecentImages.map(image => (
               <div key={image.id} className="recent-gallery__image-container">
-                <button className="imgLink">
+                <button className="recent-gallery__image--button">
                   <img
-                    className="recent-gallery__image"
+                    className={`recent-gallery__image ${
+                      enlarged ? "recent-gallery__image--enlarge" : ""
+                    }`}
                     key={image.id}
                     src={`${image.image}`}
                     alt={image.category}
+                    onClick={handleClick}
                   />
                 </button>
                 <p className="recent-gallery__text">

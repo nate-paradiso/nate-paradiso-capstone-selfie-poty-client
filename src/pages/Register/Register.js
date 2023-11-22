@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import { useEffect } from "react";
 import "./Register.scss";
 import axios from "axios";
 import { NavLink } from "react-router-dom";

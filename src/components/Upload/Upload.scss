@@ -1,6 +1,7 @@
 @use "../../styles/global" as *;
 @use "../../styles/mixins" as *;
 @use "../../styles/variables" as *;
+
 .upload {
   border-bottom: solid 1px white;
   @include main;
@@ -45,10 +46,9 @@
     justify-content: center;
     align-items: center;
     width: 75%;
-    height: 30pxpx;
+    height: 30px;
     margin-top: 0rem;
     color: grey;
-
     font-family: oswald;
     align-self: center;
     border-radius: 30px;

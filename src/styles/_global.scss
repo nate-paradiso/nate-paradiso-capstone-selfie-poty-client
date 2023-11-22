@@ -56,7 +56,6 @@ input[type="button"] {
 input::placeholder,
 select {
   font-weight: 200;
-  // text-transform: lowercase;
 }
 
 input,
@@ -89,8 +88,7 @@ select {
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus {
-  // outline: none;
-  outline: 5px solid #0e86b5;
+  border: 3px solid #0e86b5;
 }
 select {
   outline: none;
