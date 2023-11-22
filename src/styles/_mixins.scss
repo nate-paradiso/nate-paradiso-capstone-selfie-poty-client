@@ -43,7 +43,7 @@
   justify-content: center;
   align-items: center;
   &__form {
-    width: 400px;
+    width: 335px;
   }
   &__title {
     @include h2-title;
@@ -84,4 +84,17 @@
     background-color: rgb(216, 216, 216);
     transition: 0.2s ease-in-out, 0.2s ease-in-out;
   }
+}
+@mixin gallery-container {
+  position: relative;
+  z-index: 1;
+  height: 200px;
+  width: 160px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

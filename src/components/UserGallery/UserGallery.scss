@@ -3,12 +3,13 @@
 @use "../../styles/variables" as *;
 
 .user-gallery {
-  @include main;
+  width: 100%;
   font-family: oswald;
   display: flex;
   flex-direction: column;
   padding-top: 1rem;
   margin-top: 0rem;
+  margin-bottom: 5.125rem;
   &__title {
     @include h2-title;
     font-size: 1.5rem;
@@ -22,17 +23,7 @@
     align-content: flex-start;
   }
   &__image-container {
-    position: relative;
-    z-index: 1;
-    height: 200px;
-    width: 200px;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include gallery-container;
     @include tablet {
       height: 300px;
       width: 300px;

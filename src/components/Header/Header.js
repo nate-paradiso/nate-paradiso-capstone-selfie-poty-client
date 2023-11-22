@@ -35,7 +35,7 @@ export const Header = () => {
             <NavLink to="/register">Register</NavLink>
           )}
         </div>
-        <div>
+        <div className="header__link">
           {isLoggedIn ? (
             <NavLink className="header__logout" onClick={logout}>
               Logout

@@ -61,14 +61,14 @@ export const Profile = () => {
 
   if (failedAuth) {
     return (
-      <main className="profile">
+      <section className="profile">
         <p>Please Login</p>
         <p>
           <Link className="profile__link" to="/login">
             <button className="profile__button">Login</button>
           </Link>
         </p>
-      </main>
+      </section>
     );
   }
 
@@ -82,14 +82,14 @@ export const Profile = () => {
 
   return (
     <>
-      <main className="profile">
+      <section className="profile">
         <h3 className="profile__name">Welcome {user.first_name}!</h3>
 
         <p className="profile__email">Email/Username: {user.email}</p>
 
         <Upload user={user} getUserImages={getUserImages} />
         <UserGallery userGallery={userGallery} />
-      </main>
+      </section>
     </>
   );
 };
