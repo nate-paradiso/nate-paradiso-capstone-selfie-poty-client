@@ -1,7 +1,7 @@
 import "./UserGallery.scss";
 
 export const UserGallery = ({ userGallery }) => {
-  const staticHost = "http://localhost:8080/images/";
+  // const staticHost = "http://localhost:8080/images/";
 
   const numberOfRecentImagesToShow = 20;
   const mostRecentImages = userGallery.slice(-numberOfRecentImagesToShow).reverse();
@@ -12,12 +12,14 @@ export const UserGallery = ({ userGallery }) => {
       <div className="recent-gallery__image-gallery">
         {mostRecentImages.map(image => (
           <div className="recent-gallery__image-container">
-            <img
-              className="recent-gallery__image"
-              key={image.id}
-              src={`${staticHost}${image.image}`}
-              alt={image.category}
-            />
+            <button className="imgLink">
+              <img
+                className="recent-gallery__image"
+                key={image.id}
+                src={`${image.image}`}
+                alt={image.category}
+              />
+            </button>
             <p className="recent-gallery__text">
               {image.category} -- {image.title}
             </p>

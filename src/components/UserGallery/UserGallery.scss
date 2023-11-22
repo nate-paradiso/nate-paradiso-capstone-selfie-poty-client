@@ -10,3 +10,13 @@
     text-decoration: underline;
   }
 }
+.imgLink {
+  border: none;
+  background: none;
+}
+
+.imgLink:active,
+.imgLink:focus {
+  height: 800px;
+  width: 800px;
+}

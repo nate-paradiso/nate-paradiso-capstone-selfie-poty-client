@@ -99,8 +99,8 @@ export const Upload = ({ user, getUserImages }) => {
               Self Portrait
             </option>
           </select>{" "}
-          <div class="upload__input-container">
-            <label for="upload" class="button-container__choose">
+          <div className="upload__input-container">
+            <label htmlFor="upload" class="button-container__choose">
               Choose a File
             </label>
             <input
