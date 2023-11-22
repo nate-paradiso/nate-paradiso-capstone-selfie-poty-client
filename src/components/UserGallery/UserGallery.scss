@@ -7,8 +7,6 @@
   font-family: oswald;
   display: flex;
   flex-direction: column;
-  border-bottom: solid 1px white;
-
   padding-top: 1rem;
   margin-top: 0rem;
   &__title {
@@ -51,22 +49,23 @@
     border-radius: 9px;
     position: relative;
     transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
-    &:hover {
-      filter: brightness(70%);
-    }
+    // &:hover {
+    //   filter: brightness(70%);
+    // }
     &--button {
       transform: scale(1) !important;
+      cursor: auto;
     }
-    &--enlarge {
-      height: 75vw;
-      width: 75vw;
-      max-width: 700px;
-      max-height: 700px;
-      position: relative;
-      top: -30vh;
-      z-index: 999;
-      filter: brightness(100%) !important;
-    }
+    // &--enlarge {
+    //   height: 75vw;
+    //   width: 75vw;
+    //   max-width: 700px;
+    //   max-height: 700px;
+    //   position: relative;
+    //   // top: -30vh;
+    //   z-index: 1000 !important;
+    //   filter: brightness(100%) !important;
+    // }
   }
 
   &__text {
