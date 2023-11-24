@@ -1,5 +1,5 @@
 import axios from "axios";
-import { readAndCompressImage } from "browser-image-resizer";
+// import { readAndCompressImage } from "browser-image-resizer";
 import { useState } from "react";
 import "./Upload.scss";
 
