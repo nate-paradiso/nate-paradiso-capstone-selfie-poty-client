@@ -1,0 +1,70 @@
+@use "../../styles/global" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.user-gallery {
+  width: 100%;
+  font-family: oswald;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  margin-top: 0rem;
+  margin-bottom: 5.125rem;
+  &__title {
+    @include h2-title;
+    font-size: 1.5rem;
+  }
+  &__image-gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-bottom: 1.5rem;
+    align-content: flex-start;
+  }
+  &__image-container {
+    @include gallery-container;
+    @include tablet {
+      height: 300px;
+      width: 300px;
+      overflow: hidden;
+    }
+    @include desktop {
+      height: 400px;
+      width: 400px;
+    }
+  }
+  &__image {
+    height: auto;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 9px;
+    position: relative;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    // &:hover {
+    //   filter: brightness(70%);
+    // }
+    &--button {
+      transform: scale(1) !important;
+      cursor: auto;
+    }
+    // &--enlarge {
+    //   height: 75vw;
+    //   width: 75vw;
+    //   max-width: 700px;
+    //   max-height: 700px;
+    //   position: relative;
+    //   // top: -30vh;
+    //   z-index: 1000 !important;
+    //   filter: brightness(100%) !important;
+    // }
+  }
+
+  &__text {
+    background-color: $selfie-black;
+    align-self: center;
+    font-weight: 200;
+    font-size: 1rem;
+  }
+}

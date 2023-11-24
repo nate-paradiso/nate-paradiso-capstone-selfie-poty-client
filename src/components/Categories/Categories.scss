@@ -1,0 +1,63 @@
+@use "../../styles/global" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.categories {
+  @include main;
+  font-family: oswald;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 9rem;
+  &__title {
+    @include h2-title;
+  }
+  &__sub-title {
+    font-weight: 300;
+    font-size: 1.5rem;
+    border-bottom: solid 1px white;
+    margin-bottom: 1rem;
+  }
+  &__text-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    @include tablet {
+      padding-left: 9rem;
+      padding-right: 9rem;
+    }
+    @include desktop {
+      display: flex;
+      flex-direction: row;
+      padding: 0rem;
+    }
+  }
+  &__text-container-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    @include desktop {
+      justify-content: start;
+
+      padding: 4rem;
+      padding-right: 2rem;
+    }
+  }
+  &__text-container-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    @include desktop {
+      justify-content: start;
+
+      padding: 4rem;
+      padding-left: 2rem;
+    }
+  }
+  &__text {
+    margin-bottom: 1rem;
+    line-height: 2rem;
+  }
+}

@@ -1,0 +1,59 @@
+@use "../../styles/global" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.header {
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: $selfie-black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 1px white;
+
+  @include main;
+  &__logo {
+    &--image {
+      height: 60px;
+      @include tablet {
+        height: 80px;
+      }
+    }
+    &--image:active {
+      height: 50px;
+      @include tablet {
+        height: 70px;
+      }
+    }
+  }
+
+  &__link {
+    padding-left: 0.5rem;
+    font-size: 1rem;
+    @include tablet {
+      font-size: 1.35rem;
+      padding-left: 1rem;
+    }
+  }
+  &__link-container {
+    display: flex;
+    flex-direction: row;
+  }
+  &__logout {
+    font-weight: 400;
+  }
+  &__logout:hover {
+    color: rgb(216, 216, 216);
+  }
+  // &__login {
+  // }
+  &__login:hover {
+    color: rgb(216, 216, 216);
+  }
+  &__dashboard {
+    font-weight: 400;
+  }
+}

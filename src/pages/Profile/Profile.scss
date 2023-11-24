@@ -1,0 +1,25 @@
+@use "../../styles/global" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.profile {
+  margin-bottom: 5.5rem;
+  @include main;
+  @include form;
+  padding-top: 1rem;
+  &__name {
+    font-weight: 300;
+  }
+  &__email {
+    font-weight: 300;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+  }
+  &__button {
+    @include button;
+  }
+  &__link:hover {
+    color: black;
+  }
+}

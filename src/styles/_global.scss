@@ -1,0 +1,95 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+@use "./typography" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+body {
+  font-family: Oswald, Verdana, Geneva, Tahoma, sans-serif;
+  background-color: $selfie-black;
+  color: #ffffff;
+  font-family: Oswald;
+  font-weight: 200;
+  font-size: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+p {
+  letter-spacing: 0.05rem;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
+a:hover {
+  color: rgb(216, 216, 216);
+  transition: 0.2s ease-in-out, 0.2s ease-in-out;
+}
+a:active {
+  font-size: 1rem;
+}
+
+fieldset,
+button,
+input[type="button"] {
+  border: none;
+}
+input::placeholder,
+select {
+  font-weight: 200;
+}
+
+input,
+textarea,
+select,
+button {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button,
+input[type="button"] {
+  background-color: initial;
+  cursor: pointer;
+  border: initial;
+}
+button:active {
+  transform: scale(0.9);
+}
+input,
+select {
+  padding: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
+  border: none;
+  margin-bottom: 1rem;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border: 3px solid #0e86b5;
+}
+select {
+  outline: none;
+}

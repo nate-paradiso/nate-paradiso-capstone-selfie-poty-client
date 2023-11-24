@@ -1,0 +1,9 @@
+@use "../../styles/global" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.register {
+  margin-bottom: 10rem;
+  @include main;
+  @include form;
+}

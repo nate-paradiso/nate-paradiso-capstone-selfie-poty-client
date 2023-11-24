@@ -1,0 +1,55 @@
+@use "../../styles/global" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.hero {
+  display: flex;
+  margin-top: 102px;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  @include main;
+  &__logo {
+    &--image {
+      height: 170px;
+      padding-right: 4rem;
+      @include tablet {
+        height: 250px;
+      }
+    }
+  }
+  &__link {
+    padding-left: 1rem;
+  }
+  &__text-title {
+    font-weight: 200;
+  }
+  &__text-container {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      flex-direction: column;
+    }
+  }
+  &__text-paragraphs {
+    padding-left: 2rem;
+    &--tagline {
+      padding-top: 1rem;
+      font-weight: 100;
+    }
+  }
+}
+.button {
+  margin: 2rem;
+  border-radius: 4px;
+  border: none;
+  background-color: white;
+  color: $selfie-black;
+  text-transform: uppercase;
+  width: 130px;
+  height: 45px;
+  &:hover {
+    background-color: rgb(216, 216, 216);
+  }
+}
