@@ -11,7 +11,7 @@ export const RecentGallery = () => {
   useEffect(() => {
     const getAllImages = async () => {
       try {
-        const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/`);
+        const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}`);
 
         setRecentGallery(data);
       } catch (error) {
