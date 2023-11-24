@@ -16,17 +16,17 @@ export const Upload = ({ user, getUserImages }) => {
     if (user) {
       const file = document.getElementById("upload").files[0];
 
-      try {
-        const resizedImage = await readAndCompressImage(file, {
-          quality: 0.7,
-          maxWidth: 1200,
-        });
-        const formData = new FormData();
-        formData.append("title", title);
-        formData.append("category", category);
-        formData.append("image", resizedImage);
+      const formData = new FormData();
+      formData.append("title", title);
+      formData.append("category", category);
+      formData.append("image", file);
 
-        const token = sessionStorage.getItem("token");
+      const token = sessionStorage.getItem("token");
+      try {
+        // const resizedImage = await readAndCompressImage(file, {
+        //   quality: 0.7,
+        //   maxWidth: 1200,
+        // });
         await axios.post(
           `${process.env.REACT_APP_BACKEND_URL}/users/current/${user.id}/upload`,
           formData,
