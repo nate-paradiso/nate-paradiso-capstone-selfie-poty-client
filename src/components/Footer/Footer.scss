@@ -23,16 +23,12 @@
       @include tablet {
         height: 80px;
       }
-
-      &--image:active {
-        height: 50px;
-        @include tablet {
-          height: 70px;
-        }
-      }
     }
     &--image-selfie-logo:active {
       height: 50px;
+      @include tablet {
+        height: 70px;
+      }
     }
     &--image-git {
       padding-top: 7px;
