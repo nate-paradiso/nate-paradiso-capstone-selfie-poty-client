@@ -27,7 +27,7 @@ export const Upload = ({ user, getUserImages }) => {
         //   quality: 0.7,
         //   maxWidth: 1200,
         // });
-        await axios.post(
+        const response = await axios.post(
           `${process.env.REACT_APP_BACKEND_URL}/users/current/${user.id}/upload`,
           formData,
           {
@@ -39,6 +39,7 @@ export const Upload = ({ user, getUserImages }) => {
             category: category,
           },
         );
+        console.log(response.data);
         setSuccess(true);
         setUploadForm({ title: "", category: "" });
 
