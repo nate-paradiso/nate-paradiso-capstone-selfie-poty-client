@@ -16,10 +16,16 @@ export const Upload = ({ user, getUserImages }) => {
     if (user) {
       try {
         const file = document.getElementById("upload").files[0];
-        const resizedImage = await readAndCompressImage(file, {
-          quality: 0.7,
-          maxWidth: 800,
-        });
+        let resizedImage;
+        try {
+          resizedImage = await readAndCompressImage(file, {
+            quality: 0.7,
+            maxWidth: 800,
+          });
+        } catch (resizeError) {
+          console.error("Error resizing image:", resizeError.message);
+          return;
+        }
 
         const formData = new FormData();
         formData.append("title", title);
@@ -27,25 +33,27 @@ export const Upload = ({ user, getUserImages }) => {
         formData.append("image", resizedImage);
 
         const token = sessionStorage.getItem("token");
-        const response = await axios.post(
-          `${process.env.REACT_APP_BACKEND_URL}/users/current/${user.id}/upload`,
-          formData,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-              "Content-Type": "multipart/form-data",
+        let response;
+        try {
+          response = await axios.post(
+            `${process.env.REACT_APP_BACKEND_URL}/users/current/${user.id}/upload`,
+            formData,
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "multipart/form-data",
+              },
             },
-            title: title,
-            category: category,
-          },
-        );
-        console.log(response.data);
-        setSuccess(true);
-        setUploadForm({ title: "", category: "" });
-
-        getUserImages();
+          );
+          console.log(response.data);
+          setSuccess(true);
+          setUploadForm({ title: "", category: "" });
+          getUserImages();
+        } catch (uploadError) {
+          console.error("Error posting image to server:", uploadError.message);
+        }
       } catch (error) {
-        console.error("Error posting image:", error.message);
+        console.error("Error getting image:", error.message);
       }
     }
   };
