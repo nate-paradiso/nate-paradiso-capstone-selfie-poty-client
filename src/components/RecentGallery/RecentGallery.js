@@ -1,10 +1,8 @@
-// import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./RecentGallery.scss";
 
 export const RecentGallery = () => {
-  // const staticHost = "http://localhost:8080/images/";
   const [recentGallery, setRecentGallery] = useState([]);
   const [enlarged, setEnlarged] = useState(false);
 
