@@ -1,3 +1,6 @@
+link to server: 
+https://github.com/nate-paradiso/nate-paradiso-capstone-selfie-poty-server
+
 # capstone-selfie-photographer-of-the-year
 
 ## Overview
