@@ -51,6 +51,9 @@ export const Upload = ({ user, getUserImages }) => {
           getUserImages();
         } catch (uploadError) {
           console.error("Error posting image to server:", uploadError.message);
+          console.error("Error details:", uploadError.response.data); // Log detailed error response
+          console.error("Error status:", uploadError.response.status); // Log error status
+          console.error("Error headers:", uploadError.response.headers); // Log error headers
         }
       } catch (error) {
         console.error("Error getting image:", error.message);
