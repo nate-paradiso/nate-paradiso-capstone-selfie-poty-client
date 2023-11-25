@@ -1,5 +1,5 @@
 import axios from "axios";
-// import { readAndCompressImage } from "browser-image-resizer";
+import { readAndCompressImage } from "browser-image-resizer";
 import { useState } from "react";
 import "./Upload.scss";
 
@@ -14,19 +14,19 @@ export const Upload = ({ user, getUserImages }) => {
   const formSubmitHandler = async (e, title, category) => {
     e.preventDefault();
     if (user) {
-      const file = document.getElementById("upload").files[0];
-
-      const formData = new FormData();
-      formData.append("title", title);
-      formData.append("category", category);
-      formData.append("image", file);
-
-      const token = sessionStorage.getItem("token");
       try {
-        // const resizedImage = await readAndCompressImage(file, {
-        //   quality: 0.7,
-        //   maxWidth: 1200,
-        // });
+        const file = document.getElementById("upload").files[0];
+        const resizedImage = await readAndCompressImage(file, {
+          quality: 0.7,
+          maxWidth: 800,
+        });
+
+        const formData = new FormData();
+        formData.append("title", title);
+        formData.append("category", category);
+        formData.append("image", resizedImage);
+
+        const token = sessionStorage.getItem("token");
         const response = await axios.post(
           `${process.env.REACT_APP_BACKEND_URL}/users/current/${user.id}/upload`,
           formData,
