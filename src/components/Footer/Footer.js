@@ -1,8 +1,9 @@
 import React from "react";
 import logo from "../../assets/images/logo.png";
-import instagramLogo from "../../assets/images/insta.png";
+import linkedin from "../../assets/images/linkedin.png";
 import facebookLogo from "../../assets/images/facebook.png";
 import gitHubLogo from "../../assets/images/github.png";
+import instagramLogo from "../../assets/images/instagram.png";
 import { Link } from "react-router-dom";
 import "./Footer.scss";
 
@@ -15,6 +16,15 @@ export const Footer = () => {
         </Link>
       </div>
       <div className="footer__link-container">
+        <div className="footer__link">
+          <Link to="https://www.linkedin.com/in/nate-paradiso" target="blank">
+            <img
+              className="footer__logo--image-linkedin"
+              src={linkedin}
+              alt="nate paradiso github logo"
+            />
+          </Link>
+        </div>
         <div className="footer__link">
           <Link to="https://github.com/nate-paradiso" target="blank">
             <img
