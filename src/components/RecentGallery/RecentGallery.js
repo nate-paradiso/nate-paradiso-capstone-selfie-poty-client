@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
+import ModalImage from "react-modal-image";
 import axios from "axios";
 import "./RecentGallery.scss";
 
 export const RecentGallery = () => {
   const [recentGallery, setRecentGallery] = useState([]);
-  const [enlarged, setEnlarged] = useState(false);
 
   useEffect(() => {
     const getAllImages = async () => {
@@ -22,9 +22,6 @@ export const RecentGallery = () => {
   const numberOfRecentImagesToShow = 20;
   const mostRecentImages = recentGallery.slice(-numberOfRecentImagesToShow).reverse();
 
-  const handleClick = () => {
-    setEnlarged(!enlarged);
-  };
   return (
     <>
       {recentGallery ? (
@@ -32,18 +29,16 @@ export const RecentGallery = () => {
           <h2 className="recent-gallery__title">Recent Uploads</h2>
           <div className="recent-gallery__image-gallery">
             {mostRecentImages.map((image, index) => (
-              <div key={index} className="recent-gallery__image-container">
-                <button className="recent-gallery__image--button">
-                  <img
-                    className={`recent-gallery__image ${
-                      enlarged ? "recent-gallery__image--enlarge" : ""
-                    }`}
-                    key={image.id}
-                    src={`${image.image}`}
-                    alt={image.category}
-                    onClick={handleClick}
-                  />
-                </button>
+              <div key={index}>
+                <ModalImage
+                  key={index}
+                  className="recent-gallery__image-modal"
+                  small={image.image}
+                  large={image.image}
+                  hideDownload={true}
+                  hideZoom={true}
+                  alt={`${image.category} - ${image.title}`}
+                />
                 <p className="recent-gallery__text">
                   {image.category} -- {image.title}
                 </p>

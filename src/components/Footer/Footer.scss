@@ -3,10 +3,6 @@
 @use "../../styles/variables" as *;
 
 .footer {
-  position: fixed;
-  z-index: 2;
-  bottom: 0;
-  left: 0;
   width: 100%;
   background-color: $selfie-black;
   display: flex;
@@ -35,12 +31,20 @@
       height: 41px;
       padding-right: 0.5rem;
     }
+    &--image-linkedin {
+      padding-top: 1px;
+      height: 47px;
+      padding-right: 0.5rem;
+    }
     &--image {
       height: 50px;
     }
   }
   &__link {
-    padding-left: 1rem;
+    padding-left: 0rem;
+    @include tablet {
+      padding-left: 1rem;
+    }
   }
   &__link-container {
     display: flex;

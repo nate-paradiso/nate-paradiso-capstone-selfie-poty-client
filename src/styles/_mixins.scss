@@ -86,10 +86,6 @@
   }
 }
 @mixin gallery-container {
-  position: relative;
-  z-index: 1;
-  height: 200px;
-  width: 160px;
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 0.5rem;
