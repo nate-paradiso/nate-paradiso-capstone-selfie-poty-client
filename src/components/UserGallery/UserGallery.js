@@ -9,7 +9,7 @@ export const UserGallery = ({ userGallery }) => {
     <>
       {userGallery ? (
         <section className="recent-gallery">
-          <h2 className="recent-gallery__title">Recent Uploads</h2>
+          <h2 className="recent-gallery__title">Your Uploads</h2>
           <div className="recent-gallery__image-gallery">
             {mostRecentImages.map((image, index) => (
               <div className="recent-gallery__image-container" key={index}>
