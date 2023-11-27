@@ -23,11 +23,17 @@
     padding-bottom: 1.5rem;
     align-content: flex-start;
   }
-
+  &__image-container {
+    transition: top 0.3s ease, left 0.3s ease;
+  }
   &__image-modal {
     width: 150px;
     height: 150px;
     object-fit: cover;
+    transition: filter 0.3s ease;
+    &:hover {
+      filter: brightness(70%);
+    }
     @include gallery-container;
     @include tablet {
       height: 300px;

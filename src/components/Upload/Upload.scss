@@ -9,9 +9,15 @@
   padding-left: 1rem;
   &__form-container {
     display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__form-text {
+    width: 100%;
   }
   &__form-dropdown {
     color: grey;
+    width: 100%;
     &--options {
       color: black;
     }
@@ -24,8 +30,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     padding-bottom: 0rem;
     margin-bottom: 0rem;
+  }
+  &__input-input {
+    color: black;
+    width: 100%;
+    background-color: white;
+    cursor: pointer;
   }
 }
 .button-container {
@@ -37,34 +50,4 @@
     @include button;
     align-self: center;
   }
-  &__choose {
-    @include button;
-    font-weight: 200;
-    margin-bottom: 0rem;
-    text-transform: lowercase;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 75%;
-    height: 30px;
-    margin-top: 0rem;
-    color: grey;
-    font-family: oswald;
-    align-self: center;
-    border-radius: 30px;
-    cursor: pointer;
-    &:hover {
-      color: $selfie-black;
-    }
-  }
-}
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
 }

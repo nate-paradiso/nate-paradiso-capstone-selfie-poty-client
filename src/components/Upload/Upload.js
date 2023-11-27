@@ -51,9 +51,9 @@ export const Upload = ({ user, getUserImages }) => {
           getUserImages();
         } catch (uploadError) {
           console.error("Error posting image to server:", uploadError.message);
-          console.error("Error details:", uploadError.response.data); // Log detailed error response
-          console.error("Error status:", uploadError.response.status); // Log error status
-          console.error("Error headers:", uploadError.response.headers); // Log error headers
+          console.error("Error details:", uploadError.response.data);
+          console.error("Error status:", uploadError.response.status);
+          console.error("Error headers:", uploadError.response.headers);
         }
       } catch (error) {
         console.error("Error getting image:", error.message);
@@ -120,14 +120,11 @@ export const Upload = ({ user, getUserImages }) => {
             </option>
           </select>{" "}
           <div className="upload__input-container">
-            <label htmlFor="upload" className="button-container__choose">
-              Choose a File
-            </label>
             <input
               id="upload"
               accept="image/jpg, image/jpeg, image/png"
               type="file"
-              className="visually-hidden"
+              className="upload__input-input"
             />
           </div>
           <button className="button-container__upload">Upload</button>

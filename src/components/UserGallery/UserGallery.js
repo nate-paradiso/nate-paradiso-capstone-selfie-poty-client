@@ -12,7 +12,7 @@ export const UserGallery = ({ userGallery }) => {
           <h2 className="recent-gallery__title">Recent Uploads</h2>
           <div className="recent-gallery__image-gallery">
             {mostRecentImages.map((image, index) => (
-              <div key={index}>
+              <div className="recent-gallery__image-container" key={index}>
                 <ModalImage
                   key={index}
                   className="recent-gallery__image-modal"
