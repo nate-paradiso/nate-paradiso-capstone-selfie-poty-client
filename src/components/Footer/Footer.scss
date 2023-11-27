@@ -20,6 +20,11 @@
         height: 80px;
       }
     }
+    &--image-nate {
+      padding-top: 7px;
+      height: 41px;
+      padding-right: 0.5rem;
+    }
     &--image-selfie-logo:active {
       height: 50px;
       @include tablet {
@@ -48,6 +53,10 @@
   }
   &__link-container {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    @include tablet {
+      flex-direction: row;
+    }
   }
 }
