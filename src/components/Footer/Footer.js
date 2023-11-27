@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../../assets/images/logo.png";
+import NateLogo from "../../assets/images/NPLogoDropShadowInvert.png";
 import linkedin from "../../assets/images/linkedin.png";
 import facebookLogo from "../../assets/images/facebook.png";
 import gitHubLogo from "../../assets/images/github.png";
@@ -22,6 +23,15 @@ export const Footer = () => {
               className="footer__logo--image-linkedin"
               src={linkedin}
               alt="nate paradiso github logo"
+            />
+          </Link>
+        </div>
+        <div className="footer__link">
+          <Link to="https://www.nateparadisophotography.com" target="blank">
+            <img
+              className="footer__logo--image-nate"
+              src={NateLogo}
+              alt="nate paradiso photography logo"
             />
           </Link>
         </div>
