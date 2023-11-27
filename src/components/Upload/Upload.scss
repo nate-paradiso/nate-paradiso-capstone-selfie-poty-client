@@ -3,7 +3,7 @@
 @use "../../styles/variables" as *;
 
 .upload {
-  border-bottom: solid 1px white;
+  // border-bottom: solid 1px white;
   @include main;
   @include form;
   padding-left: 1rem;
