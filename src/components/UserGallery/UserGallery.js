@@ -2,7 +2,7 @@ import "../RecentGallery/RecentGallery.scss";
 import ModalImage from "react-modal-image";
 
 export const UserGallery = ({ userGallery }) => {
-  const numberOfRecentImagesToShow = 20;
+  const numberOfRecentImagesToShow = 27;
   const mostRecentImages = userGallery.slice(-numberOfRecentImagesToShow).reverse();
 
   return (
