@@ -19,7 +19,7 @@ export const RecentGallery = () => {
     getAllImages();
   }, []);
 
-  const numberOfRecentImagesToShow = 20;
+  const numberOfRecentImagesToShow = 27;
   const mostRecentImages = recentGallery.slice(-numberOfRecentImagesToShow).reverse();
 
   return (
