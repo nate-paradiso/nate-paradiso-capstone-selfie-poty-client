@@ -19,6 +19,9 @@
   &__button {
     @include button;
   }
+  &__delete {
+    margin-top: 3rem;
+  }
   &__link:hover {
     color: black;
   }
