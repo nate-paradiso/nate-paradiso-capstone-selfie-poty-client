@@ -1,9 +1,20 @@
 import "../RecentGallery/RecentGallery.scss";
 import ModalImage from "react-modal-image";
+// import { useState } from "react";
 
 export const UserGallery = ({ userGallery }) => {
   const numberOfRecentImagesToShow = 10;
   const mostRecentImages = userGallery.slice(-numberOfRecentImagesToShow).reverse();
+
+  // // State to manage the gallery
+  // const [gallery, setGallery] = useState(mostRecentImages);
+
+  // // Function to handle image deletion
+  // const handleDelete = indexToDelete => {
+  //   const updatedGallery = gallery.filter((_, index) => index !== indexToDelete);
+  //   setGallery(updatedGallery);
+  //   // Here, you might also want to perform some API call or action to delete the image from your backend/database
+  // };
 
   return (
     <>
@@ -25,6 +36,7 @@ export const UserGallery = ({ userGallery }) => {
                 <p className="recent-gallery__text">
                   {image.category} -- {image.title}
                 </p>
+                {/* <button onClick={() => handleDelete(index)}>Delete</button>{" "} */}
               </div>
             ))}
           </div>
