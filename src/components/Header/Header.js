@@ -28,7 +28,7 @@ export const Header = () => {
         <div className="header__link">
           {isLoggedIn ? (
             <NavLink className="header__dashboard" to="/profile">
-              Dashboard
+              Profile
             </NavLink>
           ) : (
             <NavLink to="/register">Register</NavLink>
