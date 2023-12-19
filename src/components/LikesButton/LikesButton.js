@@ -3,16 +3,15 @@ import "./LikesButton.scss";
 import thumbsUp from "../../assets/images/thumbsup.png";
 
 export const LikesButton = () => {
-  const [likes, setLikes] = useState("");
+  const [likes, setLikes] = useState(1);
   const [isClicked, setIsClicked] = useState(false);
 
   const handleClick = () => {
     if (isClicked) {
-      setLikes(likes - 1);
-    } else {
       setLikes(likes + 1);
+    } else {
+      setIsClicked(!isClicked);
     }
-    setIsClicked(!isClicked);
   };
 
   return (
