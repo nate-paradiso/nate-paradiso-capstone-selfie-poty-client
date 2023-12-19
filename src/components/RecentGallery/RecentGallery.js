@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ModalImage from "react-modal-image";
 import axios from "axios";
 import "./RecentGallery.scss";
+import { LikesButton } from "../LikesButton/LikesButton";
 
 export const RecentGallery = () => {
   const [recentGallery, setRecentGallery] = useState([]);
@@ -39,9 +40,14 @@ export const RecentGallery = () => {
                   hideZoom={true}
                   alt={`${image.category} - ${image.title}`}
                 />
-                <p className="recent-gallery__text">
-                  {image.category} -- {image.title}
-                </p>
+
+                <div className="recent-gallery__text">
+                  <div className="recent-gallery__paragraph">
+                    <p>{image.category}--</p>
+                    <p>{image.title}</p>
+                  </div>
+                  <LikesButton></LikesButton>
+                </div>
               </div>
             ))}
           </div>
