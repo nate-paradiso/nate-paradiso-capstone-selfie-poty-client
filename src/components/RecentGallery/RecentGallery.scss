@@ -44,10 +44,19 @@
       width: 475px;
     }
   }
-
+  &__paragraph {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+    }
+  }
   &__text {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     background-color: $selfie-black;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     flex-direction: row;
     font-weight: 200;

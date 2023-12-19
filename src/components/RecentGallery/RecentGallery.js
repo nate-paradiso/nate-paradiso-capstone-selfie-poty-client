@@ -42,9 +42,10 @@ export const RecentGallery = () => {
                 />
 
                 <div className="recent-gallery__text">
-                  <p>
-                    {image.category} -- {image.title}
-                  </p>
+                  <div className="recent-gallery__paragraph">
+                    <p>{image.category}--</p>
+                    <p>{image.title}</p>
+                  </div>
                   <LikesButton></LikesButton>
                 </div>
               </div>

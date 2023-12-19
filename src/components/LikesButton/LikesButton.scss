@@ -3,11 +3,18 @@
 @use "../../styles/variables" as *;
 
 .likes {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.likes-counter {
-  align-self: center;
-  font-size: 0.75rem;
+  &__button {
+    display: flex;
+  }
+  &__button-thumb {
+    height: 30px;
+    @include tablet {
+      height: 30px;
+    }
+  }
+  &__button-counter {
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 200;
+  }
 }

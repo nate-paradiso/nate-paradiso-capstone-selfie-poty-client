@@ -1,27 +1,29 @@
 import { useState } from "react";
 import "./LikesButton.scss";
+import thumbsUp from "../../assets/images/thumbsup.png";
 
 export const LikesButton = () => {
-  const [likes, setLikes] = useState(0);
+  const [likes, setLikes] = useState("");
   const [isClicked, setIsClicked] = useState(false);
 
   const handleClick = () => {
-    // if (isClicked) {
-    //   setLikes(likes - 1);
-    // } else
-    // {
-    setLikes(likes + 1);
-
+    if (isClicked) {
+      setLikes(likes - 1);
+    } else {
+      setLikes(likes + 1);
+    }
     setIsClicked(!isClicked);
   };
 
   return (
     <>
-      {/* <div className="likes"> */}
-      <button className={`like__button ${isClicked && "liked"}`} onClick={handleClick}>
-        <span className="likes__button-counter">{`likes ${likes}`}</span>
+      <button className="likes__button" onClick={handleClick}>
+        <span className="likes__button-counter">
+          {" "}
+          <img className="likes__button-thumb" src={thumbsUp} alt="thumbs up icon" />
+          {`${likes}`}
+        </span>
       </button>
-      {/* </div> */}
     </>
   );
 };
