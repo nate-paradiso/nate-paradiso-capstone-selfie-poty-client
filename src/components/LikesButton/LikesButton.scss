@@ -1,0 +1,20 @@
+@use "../../styles/global" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.likes {
+  &__button {
+    display: flex;
+  }
+  &__button-thumb {
+    height: 30px;
+    @include tablet {
+      height: 30px;
+    }
+  }
+  &__button-counter {
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 200;
+  }
+}
