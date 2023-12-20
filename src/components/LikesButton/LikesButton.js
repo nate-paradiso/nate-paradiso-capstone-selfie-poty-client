@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./LikesButton.scss";
 import thumbsUp from "../../assets/images/thumbsup.png";
 
