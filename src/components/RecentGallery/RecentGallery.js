@@ -23,6 +23,13 @@ export const RecentGallery = () => {
   const numberOfRecentImagesToShow = 25;
   const mostRecentImages = recentGallery.slice(-numberOfRecentImagesToShow).reverse();
 
+  const handleUpdateLikes = (imageId, updatedLikes) => {
+    const updatedGallery = recentGallery.map(image =>
+      image.image_id === imageId ? { ...image, likes: updatedLikes } : image,
+    );
+    setRecentGallery(updatedGallery);
+  };
+
   return (
     <>
       {recentGallery ? (
@@ -46,7 +53,11 @@ export const RecentGallery = () => {
                     <p>{image.category}--</p>
                     <p>{image.title}</p>
                   </div>
-                  <LikesButton></LikesButton>
+                  <LikesButton
+                    imageId={image.image_id}
+                    likes={image.likes}
+                    handleUpdateLikes={handleUpdateLikes}
+                  ></LikesButton>
                 </div>
               </div>
             ))}
